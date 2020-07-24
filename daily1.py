@@ -118,6 +118,7 @@ numpy.array([10,20])
 
 import numpy as np #np is alias
 np1 = np.arange(1,10)
+dir(np)
 x=np.arange(start=1,stop=1000000,step=2)
 len(x)
 x[1:100]
@@ -183,7 +184,7 @@ import statsmodels.api as sm
 #https://vincentarelbundock.github.io/Rdatasets/datasets.html
 mtcars = sm.datasets.get_rdataset(dataname='mtcars', package= 'datasets')
 mtcars.data.head()
-
+mtcars.data.tail()
 #%%
 #Load from Excel/ CSV and export to
 data = mtcars.data
@@ -191,7 +192,8 @@ data.head(6)
 type(data)
 data.to_csv('mtcars.csv')
 data.to_excel('mtcarsExcel.xlsx','sheet3', header=False)
-
+data.to_excel('mtcarsExcel1.xlsx','sheet3')
+mtcars.data.columns
 #writing to multiple sheets
 writer = pd.ExcelWriter('test.xlsx', engine='xlsxwriter')
 # Write each dataframe to a different worksheet. you could write different string like above if you want
@@ -207,7 +209,7 @@ data2a
 data2a = pd.read_csv('mtcars.csv') #when csv is in project folder
 data2a
 data2b
-data2b = pd.read_csv('E:/pywork/pyprojects/duanalytics/pyanalytics/mtcars.csv')
+data2b = pd.read_csv('D:\analytics\projects\pyanalytics\mtcars.csv')
 data2b
 #csv in any other location - full path
 data2b
@@ -216,3 +218,11 @@ data2a.head()
 data2c = pd.read_excel('mtcarsExcel.xlsx',header=0)
 #header=None
 data2c.head()
+str1='python'
+len(str1)
+list3 = ['sandhya', 'kushwaha','sarita']
+print(list3)
+list4 = [1,2,3,4,56]
+for i in list4:
+    print('sandhya', i+3)
+    print( i+33)
